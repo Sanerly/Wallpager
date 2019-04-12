@@ -1,0 +1,58 @@
+if (isComponent.toBoolean()) {
+    //独立运行
+    apply plugin: 'com.android.application'
+} else {
+    //合并到宿主
+    apply plugin: 'com.android.library'
+}
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            if (isComponent.toBoolean()) {
+                //独立运行
+                manifest.srcFile 'src/main/moudle/AndroidManifest.xml'
+            } else {
+                //合并到宿主
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //合并到宿主时，排除debug文件夹下所有调试文件
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //项目服务
+    implementation project(':lib_common')
+    //阿里路由
+    annotationProcessor  rootProject.ext.dependencies["arouter-compiler"]
+}

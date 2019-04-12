@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sanerly.base">
+
+    <application>
+        <activity android:name=".basic.ContainerActivity" />
+    </application>
+</manifest>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+    <variable
+        name="itemViewModel"
+        type="com.sanerly.read.viewmodel.ItemViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="经过第一步基本可以实现抖音的效果，但是写完之后一会发现，不知道哪里来开始播放视频和在哪里释放视频。不要着急，要监听滑动到哪页，需要我们重写onScrollStateChanged（）函数，这里面有三种状态：SCROLL_STATE_IDLE（空闲），SCROLL_STATE_DRAGGING（拖动），
+SCROLL_STATE_SETTLING（要移动到最后位置时）。我们需要的就是RecyclerView停止时的状态，我们就可以拿到这个View的Position.注意这里还有一个问题，当你通过这个position去拿Item会报错，这里涉及到RecyclerView的缓存机制，自己去脑补~~。打印Log,你会发现RecyclerView.getChildCount()一直为1或者会出现为2的情况。好了，我们自己来实现一个接口然后通过接口把状态传递出去。" />
+    </LinearLayout>
+</layout>

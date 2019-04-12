@@ -1,0 +1,12 @@
+apply from: "../library.build.gradle"
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //基础框架底层
+    api project(':lib_base')
+    //阿里路由
+    api rootProject.ext.dependencies["arouter-api"]
+    //tablayout
+    api rootProject.ext.dependencies["tablayout"]
+
+}

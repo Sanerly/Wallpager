@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sanerly.home.model.HomeModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.activity.HomeActivity">
+
+            <FrameLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tab_layout" />
+
+
+            <com.flyco.tablayout.CommonTabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:padding="5dp"
+                tl:tl_iconHeight="20dp"
+                tl:tl_iconWidth="20dp"
+                tl:tl_indicator_color="@color/white"
+                tl:tl_indicator_height="0dp"
+                tl:tl_textSelectColor="@color/main_golden"
+                tl:tl_textUnselectColor="@color/main_black"
+                tl:tl_textsize="11sp"
+                tl:tl_underline_height="0dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

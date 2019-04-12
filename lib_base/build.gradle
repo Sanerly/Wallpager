@@ -1,0 +1,25 @@
+apply from: "../library.build.gradle"
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.support["appcompat-v7"]
+    api rootProject.ext.support["constraint-layout"]
+    api rootProject.ext.support["design"]
+    api rootProject.ext.dependencies["xpopup"]
+    api rootProject.ext.dependencies["rxeasyhttp"]
+    api rootProject.ext.dependencies["rxlifecycle-components"]
+    api rootProject.ext.dependencies["rxbinding"]
+
+    //recyclerview的databinding套装
+//    api(rootProject.ext.dependencies.bindingcollectionadapter) {
+//        exclude group: 'com.android.support'
+//    }
+//    api(rootProject.ext.dependencies["bindingcollectionadapter-recyclerview"]) {
+//        exclude group: 'com.android.support'
+//    }
+
+    api rootProject.ext.dependencies["extensions"]
+    api rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    implementation rootProject.ext.dependencies["logger"]
+}
