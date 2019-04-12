@@ -23,8 +23,7 @@ public class ReadAdapter extends BaseBindingAdapter<ItemViewModel,RdItemReadLayo
     }
 
     @Override
-    protected void onBindItem(RdItemReadLayoutBinding binding, ItemViewModel item) {
+    protected void onBindItem(RdItemReadLayoutBinding binding, ItemViewModel item, int position) {
         binding.setItemViewModel(item);
     }
-
 }

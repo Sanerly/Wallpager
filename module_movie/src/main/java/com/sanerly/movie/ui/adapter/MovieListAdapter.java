@@ -24,7 +24,7 @@ public class MovieListAdapter extends BaseBindingAdapter<ItemViewModel,MvItemMov
     }
 
     @Override
-    protected void onBindItem(MvItemMovieLayoutBinding binding, ItemViewModel item) {
+    protected void onBindItem(MvItemMovieLayoutBinding binding, ItemViewModel item, int position) {
         binding.setItemViewModel(item);
     }
 

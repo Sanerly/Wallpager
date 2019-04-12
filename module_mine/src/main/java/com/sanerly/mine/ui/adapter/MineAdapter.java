@@ -23,9 +23,10 @@ public class MineAdapter extends BaseBindingAdapter<ItemViewModel,MeItemMineLayo
     }
 
     @Override
-    protected void onBindItem(MeItemMineLayoutBinding binding, ItemViewModel item) {
+    protected void onBindItem(MeItemMineLayoutBinding binding, ItemViewModel item, int position) {
         binding.setItemViewModel(item);
     }
+
 
 
 

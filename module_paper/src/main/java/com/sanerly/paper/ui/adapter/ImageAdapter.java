@@ -27,16 +27,17 @@ public class ImageAdapter extends BaseBindingAdapter<ImageItemViewModel, PaItemI
     }
 
     @Override
-    protected void onBindItem(PaItemImageLayoutBinding binding, final ImageItemViewModel item) {
+    protected void onBindItem(PaItemImageLayoutBinding binding, final ImageItemViewModel item, final int position) {
         binding.setImageItemViewModel(item);
         binding.ivItemImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mItemChildClickListener != null) {
-                    mItemChildClickListener.onItemChildClick(v, item,getCurrentPosition());
+                    mItemChildClickListener.onItemChildClick(v, item,position);
                 }
             }
         });
     }
+
 
 }

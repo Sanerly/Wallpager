@@ -23,21 +23,9 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
     protected AdapterListener.onItemChildClickListener mItemChildClickListener;
     private AdapterListener.onItemClickListener mItemClickListener;
     private AdapterListener.onItemLongClickListener mItemLongClickListener;
-    private int mPosition;
     public BaseBindingAdapter(ObservableArrayList<M> datas) {
-
         this.mDatas = datas;
         this.itemsChangeCallback = new ListChangedCallback();
-    }
-
-    public ObservableArrayList<M> getDatas() {
-        return mDatas;
-    }
-
-    public class BaseBindingViewHolder extends RecyclerView.ViewHolder {
-        BaseBindingViewHolder(View itemView) {
-            super(itemView);
-        }
     }
 
     @Override
@@ -54,15 +42,14 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder,  int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final B binding = DataBindingUtil.getBinding(holder.itemView);
-        this.onBindItem(binding, this.mDatas.get(position));
-        mPosition=holder.getAdapterPosition();
+        this.onBindItem(binding, this.mDatas.get(position),position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mItemClickListener != null) {
-                    mItemClickListener.onItemClick(mDatas.get(mPosition), mPosition);
+                    mItemClickListener.onItemClick(mDatas.get(position), position);
                 }
             }
         });
@@ -71,7 +58,7 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
             @Override
             public boolean onLongClick(View v) {
                 if (mItemLongClickListener != null) {
-                    mItemLongClickListener.onItemLongClick(mDatas.get(mPosition), mPosition);
+                    mItemLongClickListener.onItemLongClick(mDatas.get(position), position);
                 }
                 return true;
             }
@@ -90,7 +77,9 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
         this.mDatas.removeOnListChangedCallback(itemsChangeCallback);
     }
 
-    //region 处理数据集变化
+    /**
+     * region 处理数据集变化
+     */
     private void onChanged(ObservableArrayList<M> newItems) {
         reset(newItems);
         notifyDataSetChanged();
@@ -117,6 +106,12 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
     }
 
 
+    private class BaseBindingViewHolder extends RecyclerView.ViewHolder {
+        BaseBindingViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
     private void reset(ObservableArrayList<M> datas) {
         this.mDatas = datas;
     }
@@ -124,7 +119,7 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
     @LayoutRes
     protected abstract int getLayoutResId(int viewType);
 
-    protected abstract void onBindItem(B binding, M item);
+    protected abstract void onBindItem(B binding, M item,int position);
 
     private class ListChangedCallback extends ObservableArrayList.OnListChangedCallback<ObservableArrayList<M>> {
         @Override
@@ -153,19 +148,33 @@ public abstract class BaseBindingAdapter<M extends BaseViewModel, B extends View
         }
     }
 
-    public int getCurrentPosition() {
-        return mPosition;
-    }
-
+    /**
+     * 设置Item长按事件
+     */
     public void setOnItemLongClickListener(AdapterListener.onItemLongClickListener listener) {
         this.mItemLongClickListener = listener;
     }
 
+    /**
+     * 设置单击事件
+     */
     public void setOnItemClickListener(AdapterListener.onItemClickListener listener) {
         this.mItemClickListener = listener;
     }
 
+
+    /**
+     * 设置子控件点击事件
+     */
     public void setOnItemChildClickListener(AdapterListener.onItemChildClickListener listener) {
         this.mItemChildClickListener = listener;
+    }
+
+
+    /**
+     * 获取数据集合
+     */
+    public ObservableArrayList<M> getDatas() {
+        return mDatas;
     }
 }

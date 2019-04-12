@@ -40,13 +40,13 @@ public class MineFragment extends BaseFragment<MeFragmentMineBinding, MineModel>
         mViewModel.mAdapter.setOnItemClickListener(new AdapterListener.onItemClickListener() {
             @Override
             public void onItemClick(Object o, int position) {
+                LogUtils.e("position = "+position);
                 switch (position) {
                     case 0:
                         break;
                     case 1:
                         break;
                     case 2:
-                        LogUtils.e("position = "+position);
                         RouterConfig.toActivity(RouterUrl.AV.ACTIVITY_AUDIO);
                         break;
                     default:

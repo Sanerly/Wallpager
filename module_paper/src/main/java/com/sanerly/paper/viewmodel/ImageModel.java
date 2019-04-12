@@ -12,6 +12,7 @@ import com.common.widget.xp.ImageLoader;
 import com.lxj.xpopup.XPopup;
 import com.sanerly.base.adapter.AdapterListener;
 import com.sanerly.base.basic.BaseViewModel;
+import com.sanerly.base.util.LogUtils;
 import com.sanerly.base.util.ToastUtils;
 import com.sanerly.paper.model.PaperApiResult;
 import com.sanerly.paper.model.ResBean;
@@ -46,6 +47,8 @@ public class ImageModel extends BaseViewModel {
 
             @Override
             public void onItemChildClick(View view, ImageItemViewModel imageItemViewModel, int position) {
+
+                LogUtils.e("position = "+position);
                 XPopup.get(view.getContext())
                         .asImageViewer((ImageView) view, imageItemViewModel.mUrl.get(), new ImageLoader())
                         .show();
