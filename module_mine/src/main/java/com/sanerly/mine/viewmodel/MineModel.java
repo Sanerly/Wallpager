@@ -17,7 +17,7 @@ public class MineModel extends BaseViewModel{
     public ObservableField<String> mAvater=new ObservableField<>();
     private ObservableArrayList<ItemViewModel> mList=new ObservableArrayList<>();
     public MineAdapter mAdapter=new MineAdapter(mList);
-    private String [] mArray={"自定义View","动画","音视频从入门到提高"};
+    private String [] mArray={"自定义View","动画","音视频从入门到放弃"};
     public MineModel(@NonNull Application application) {
         super(application);
     }

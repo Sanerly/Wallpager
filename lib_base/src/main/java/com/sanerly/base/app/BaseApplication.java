@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.sanerly.base.basic.AppManager;
+import com.sanerly.base.util.FontsUtils;
 import com.sanerly.base.util.LogUtils;
 import com.sanerly.base.util.Utils;
 import com.zhouyou.http.EasyHttp;
@@ -36,6 +37,8 @@ public class BaseApplication extends Application {
         registerActivityLifecycle(app);
         //初始化网络框架
         initEasyHttp(app);
+        //设置默认中文字体
+        FontsUtils.initDefault();
     }
 
     /**

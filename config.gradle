@@ -68,6 +68,8 @@ ext {
             "logger"                               : "com.orhanobut:logger:2.2.0",
             //tablayout
             "tablayout"                            : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            //设置字体
+            "fonts_calligraphy"                    : "uk.co.chrisjenx:calligraphy:2.3.0",
 
     ]
 }

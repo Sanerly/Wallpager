@@ -33,6 +33,12 @@ public class MineFragment extends BaseFragment<MeFragmentMineBinding, MineModel>
     }
 
     @Override
+    public void init() {
+        super.init();
+        
+    }
+
+    @Override
     public void loadData() {
         super.loadData();
         mViewModel.loadData();

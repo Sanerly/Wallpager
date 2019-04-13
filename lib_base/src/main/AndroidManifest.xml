@@ -2,6 +2,8 @@
     package="com.sanerly.base">
 
     <application>
-        <activity android:name=".basic.ContainerActivity" />
+        <activity
+            android:name=".basic.ContainerActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

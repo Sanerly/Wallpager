@@ -3,6 +3,7 @@ package com.sanerly.base.basic;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.graphics.Color;
@@ -20,6 +21,8 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 /**
  * 作者：Sanerly
  * 时间；2019/3/16 16:51
@@ -31,6 +34,11 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     protected VM mViewModel;
     private int mViewModelId;
     private XPopup mXPopup;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

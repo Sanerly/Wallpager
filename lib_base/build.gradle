@@ -9,6 +9,7 @@ dependencies {
     api rootProject.ext.dependencies["rxeasyhttp"]
     api rootProject.ext.dependencies["rxlifecycle-components"]
     api rootProject.ext.dependencies["rxbinding"]
+    api rootProject.ext.dependencies["fonts_calligraphy"]
 
     //recyclerview的databinding套装
 //    api(rootProject.ext.dependencies.bindingcollectionadapter) {
