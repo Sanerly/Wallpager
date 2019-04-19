@@ -57,11 +57,21 @@ public interface RouterUrl {
         String FRAGMENT_MINE = MINE + "/mine";
     }
 
-
+    /**
+     * 音视频
+     */
     interface AV{
         String AV = "/av";
         /*音频*/
         String ACTIVITY_AUDIO = AV + "/audio";
     }
 
+    /**
+     * 状态栏
+     */
+    interface Status{
+        String STATUS = "/status";
+        /*状态栏测试*/
+        String ACTIVITY_STATUS = STATUS + "/status";
+    }
 }

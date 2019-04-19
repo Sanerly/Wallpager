@@ -10,7 +10,7 @@ import uk.co.chrisjenx.calligraphy.R;
 public class FontsUtils {
     public static void  initDefault(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/test1.ttf")
+                .setDefaultFontPath("fonts/test.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build());
     }

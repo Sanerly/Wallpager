@@ -1,1 +1,1 @@
-include ':app', ':lib_common', ':lib_base', ':module_paper', ':module_home', ':module_movie', ':module_read', ':module_mine', ':module_av'
+include ':app', ':lib_common', ':lib_base', ':module_paper', ':module_home', ':module_movie', ':module_read', ':module_mine', ':module_av', ':module_statusbar'

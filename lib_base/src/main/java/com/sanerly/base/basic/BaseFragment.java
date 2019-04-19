@@ -36,7 +36,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     private boolean isFragmentVisible;
     private boolean isReuseView;
     private boolean isFirstVisible;
-    protected View visibleView;
+    private View visibleView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -191,8 +191,6 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         getLifecycle().addObserver(mViewModel);
         //注入RxLifecycle生命周期
         mViewModel.setRxLifecycle(this);
-        //注入Activity
-        mViewModel.setActivity(getActivity());
     }
 
     /**

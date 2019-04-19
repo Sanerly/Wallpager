@@ -21,7 +21,6 @@ public class BaseViewModel extends AndroidViewModel implements IBaseViewModel {
 
     private LifecycleProvider lifecycle;
     private UIChangeLiveData mLiveData;
-    private Activity mActivity;
     public BaseViewModel(@NonNull Application application) {
         super(application);
     }
@@ -36,14 +35,7 @@ public class BaseViewModel extends AndroidViewModel implements IBaseViewModel {
         return this;
     }
 
-    public Activity getActivity() {
-        return mActivity;
-    }
 
-    public BaseViewModel setActivity(Activity activity) {
-        mActivity = activity;
-        return this;
-    }
 
     public BaseViewModel getContext() {
         return this;

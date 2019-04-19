@@ -8,7 +8,7 @@
         <!--<item name="colorAccent">@color/colorAccent</item>-->
     <!--</style>-->
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!--将ActionBar隐藏,这里使用ToolBar-->
         <item name="windowActionBar">false</item>
         <!-- 使用 API Level 22以上编译的话，要拿掉前綴字 -->
@@ -19,12 +19,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色。-->
         <item name="colorAccent">@color/colorPrimaryDark</item>
-        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
-    <!--不显示ActionBar-->
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+
 </resources>

@@ -1,18 +1,17 @@
 apply from: "../module.build.gradle"
 
-
 android {
     defaultConfig {
         //如果是独立模块，则使用当前组件的包名
         if (isComponent.toBoolean()) {
-            applicationId "com.sanerly.home"
+            applicationId "com.sanerly.statusbar"
         }
     }
     //统一资源前缀，规范资源引用
-//    resourcePrefix "home_"
+    resourcePrefix "status_"
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'cn.yc:YCStatusBarLib:1.4.0'
 }

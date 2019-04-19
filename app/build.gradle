@@ -30,5 +30,6 @@ dependencies {
         implementation project(':module_paper')
         implementation project(':module_mine')
         implementation project(':module_av')
+        implementation project(':module_statusbar')
     }
 }
