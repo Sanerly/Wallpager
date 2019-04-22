@@ -58,7 +58,7 @@ public class StatusBarUtils {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             activity.getWindow().setStatusBarColor(calculateStatusColor(color, statusBarAlpha));
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        } else {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
             View fakeStatusBarView = decorView.findViewById(FAKE_STATUS_BAR_VIEW_ID);

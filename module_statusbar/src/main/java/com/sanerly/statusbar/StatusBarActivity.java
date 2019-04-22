@@ -47,7 +47,7 @@ public class StatusBarActivity extends BaseActivity{
     public void init() {
         super.init();
 
-        StatusBarUtils.setColor(this, getResources().getColor(R.color.main_golden));
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.black));
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            getWindow().setStatusBarColor(Color.RED);
 //        }

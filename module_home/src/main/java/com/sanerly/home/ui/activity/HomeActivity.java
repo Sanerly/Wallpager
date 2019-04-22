@@ -58,7 +58,9 @@ public class HomeActivity extends BaseActivity<ActivityHomeBinding, HomeModel> {
 //        StatusBarUtils.setLightMode(this);
 //        StatusBarUtils.setColor(this, getResources().getColor(R.color.main_black));
 
-        StateAppBar.setStatusBarColor(this, ContextCompat.getColor(this, R.color.main_black));
+//        StateAppBar.setStatusBarColor(this, ContextCompat.getColor(this, R.color.red));
+
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.black));
 
         Fragment paperFragment = RouterConfig.getFragment(RouterUrl.Paper.FRAGMENT_PAPER);
         Fragment movieFragment = RouterConfig.getFragment(RouterUrl.Movie.FRAGMENT_MOVIE);
